@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Propagation</title> 
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script>
+        function someEvent(){
+            alert('Some event fired!');
+        }
+
+        function stopPropagation(event){
+            event = event || window.event;
+            if (event.stopPropagation) {
+                event.stopPropagation();
+            }
+            else {
+                event.cancelBubble = true;
+            }
+        }
+
+    </script>   
+</head>
+<body>
+    <div onclick="someEvent()">
+        <span><input type="radio" name="sizeRadio" id="sizeRadioSml" value="1" onclick="stopPropagation(event)"/></span>
+            <label for="sizeRadioSml">Small</label>
+        <span><input type="radio" name="sizeRadio" id="sizeRadioMdm" value="1" onclick="stopPropagation(event)"/></span>
+            <label for="sizeRadioMdm">Medium</label>
+        <span><input type="radio" name="sizeRadio" id="sizeRadioLrg" value="1" onclick="stopPropagation(event)"/></span>
+            <label for="sizeRadioLrg">Large</label>
+    </div>
+</body>
+</html>
