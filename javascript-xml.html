@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript XML</title>
+</head>
+    <body onload="readXMLFile()">
+        <div id="to"></div>
+        <div id="from"></div>
+        <div id="message"></div>    
+    </body>
+    <script>
+    var xmldoc;
+    function readXMLFile()
+    {
+        if (window.XMLHttpRequest)
+        { // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else 
+        { // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.open("GET", "message.xml", false);
+        xmlhttp.send();
+        xmldoc = xmlhttp.responseXML;
+    }
+    </script>
+</html>

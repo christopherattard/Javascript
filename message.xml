@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+    <to>jj@contoso.com</to>
+    <from>dd@contoso.com</from>
+    <message>Meeting is cancelled</message>
+</messages>
