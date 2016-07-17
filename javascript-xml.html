@@ -24,6 +24,10 @@
         xmlhttp.open("GET", "message.xml", false);
         xmlhttp.send();
         xmldoc = xmlhttp.responseXML;
+
+        document.getElementById("to").innerHTML = xmldoc.getElementsByTagName("to")[0].childNodes[0].nodeValue;
+        document.getElementById("from").innerHTML = xmldoc.getElementsByTagName("from")[0].childNodes[0].nodeValue;
+        document.getElementById("message").innerHTML = xmldoc.getElementsByTagName("message")[0].childNodes[0].nodeValue;
     }
     </script>
 </html>
