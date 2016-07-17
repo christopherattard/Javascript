@@ -13,16 +13,18 @@
     <script type="text/javascript">
         onerror = unhandled;
         function unhandled(msg, url, line) {
-            alert("There has been an unhandled exception.");
+            alert("There has been an unhandled exception: "+msg);
         }
         
         function add() {
             alert($('#int1').val() + $('#int2').val());
         }
         function divide() {
-            if (isNaN($('#int1').val()) || isNaN($('#int2').val())) {
+            if (isNaN($('#int1').val()) || isNaN($('#int2').val())) {                
                 throw('One or more values are non-numeric');
-            }
+                //execution is transferred from here and 
+                //catched by the unhandled function()
+            }            
             alert($('#int1').val() / $('#int2').val());
         }
     </script>
