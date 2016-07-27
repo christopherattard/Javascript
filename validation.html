@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Input Validation</title> 
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+       
+</head>
+<body>
+    <form method="POST" action="#">
+        <input id="txtValue" type="text"/>
+        <input type='submit' id='btnValidate' name="submit" Value='Submit' />
+        <span>This regex accepts digits, fullstop and comma</span>
+        <input type='number' name='rating' min ='1' max='10'>
+        <input type='range' name='rating2' min='1' max='10' value='3'>
+    </form>
+
+    <script>      
+        $(document).ready(function(e) {        
+        $('#btnValidate').click(function() {        
+            var value = $('#txtValue').val();
+            alert(isNaN(value));
+            /*var regex = /^[\d\,\.]*$/;
+            if (!regex.test(value) || value == "")
+                alert("Please enter a valid value [/^[\d\,\.]*$/]");*/                
+        }); 
+
+        
+        /*var userInput1 = -13;
+        alert(isNaN(userInput1));
+        var userInput2 = 24.3;
+        alert(isNaN(userInput2));
+        var userInput3 = 3*8;
+        alert(isNaN(userInput3));
+        var userInput4 = '5';
+        alert(isNaN(userInput4));*/       
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Append JSON to Table</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>    
+</head>
+    <body>
+        <table id="fruitTable">
+            <tr>
+                <th>Fruit</th>
+                <th>Inventory</th>
+            </tr>
+        </table>        
+    </body>
+    <script>
+        
+        var jsonFruit = { "apples" : "12", "bananas" : "8", "watermelon" : "3" };
+        
+        $.each(jsonFruit, function(key,val) {
+            $("<tr><td>" +key +"</td><td>" +val +"</td></tr>").appendTo('#fruitTable');
+        });        
+
+    </script>
+</html>
